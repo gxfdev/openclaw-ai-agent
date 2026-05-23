@@ -1,105 +1,108 @@
-# OpenCLAW Emotional & Self-Evolving Skills
-
-![OpenCLAW Logo](https://via.placeholder.com/800x200?text=OpenCLAW+Emotional+AI) <!-- 替换为实际Logo URL -->
+# 🦞 Emotional Self-Evolving Skill for OpenClaw
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Status](https://img.shields.io/badge/status-active-success.svg)](https://github.com/yourusername/openclaw-emotional-skills)
 
-## 🤖 简介
+一个为 [OpenClaw](https://github.com/openclaw/openclaw) 小龙虾智能体打造的技能，赋予它情感感知与自我进化的能力。
 
-OpenCLAW 是一个具有情感模拟和自我进化能力的AI代理框架。本项目提供了完整的技能集合，使其能够感知情感、学习新行为并自我优化。
+## 这是什么？
 
-## ✨ 特性
+这是一个 **OpenClaw Skill**，不是独立项目。安装后放到小龙虾的 `skills/` 目录，小龙虾就能：
 
-- **情感系统**: 模拟人类情感反应，基于情境调整行为模式
-- **自我进化**: 根据环境反馈自主改进策略和行为
-- **多任务处理**: 支持多种复杂任务的协同执行
-- **记忆管理**: 长短期记忆结合，增强上下文理解
-- **学习能力**: 从交互中获取新知识和技能
+- 🎭 **感知情感** — 理解用户的喜怒哀乐，做出恰当的情感回应
+- 🧠 **自我进化** — 从每次交互中学习，持续优化回应策略
+- 💾 **记忆管理** — 短期/长期/经验三层记忆，增强上下文理解
+- 🔄 **行为优化** — 积累成功模式，自动适配不同情境
 
-## 🚀 快速开始
+## 安装
 
-### 环境要求
+### 方式一：手动安装（推荐）
 
-- Python 3.8 或更高版本
-- pip 包管理器
-
-### 安装
-
-1. 克隆此仓库
-   ```bash
-   git clone https://github.com/yourusername/openclaw-emotional-skills.git
-   ```
-
-2. 进入项目目录
-   ```bash
-   cd openclaw-emotional-skills
-   ```
-
-3. 安装依赖
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-### 使用示例
-
-```python
-from openclaw import OpenCLAW
-
-# 创建智能体实例
-agent = OpenCLAW(name="OpenCLAW")
-
-# 与智能体交互
-response = agent.interact("你好，你现在感觉如何？", user_emotion="curious")
-print(response)
-
-# 检查当前情感状态
-emotions = agent.get_emotional_state()
-print(f"当前情感: {emotions}")
-
-# 检查进化状态
-evolution = agent.get_evolution_status()
-print(f"进化状态: {evolution}")
+```bash
+git clone https://github.com/gxfdev/openclaw-ai-agent.git
+cp -r openclaw-ai-agent ~/.openclaw/skills/emotional-self-evolving
 ```
 
-## 📚 详细文档
+### 方式二：放到工作区
 
-- [使用指南](USAGE.md) - 如何使用各种功能
-- [技能详解](SKILLS.md) - 详细的技术实现说明
-- [项目结构](PROJECT_STRUCTURE.md) - 代码组织方式
+```bash
+git clone https://github.com/gxfdev/openclaw-ai-agent.git
+cp -r openclaw-ai-agent ~/your-workspace/skills/emotional-self-evolving
+```
 
-## 🏗️ 技术架构
+### 方式三：ClawHub（即将支持）
 
-- Python 3.8+
-- PyTorch/TensorFlow (深度学习)
-- Transformers (自然语言处理)
-- Reinforcement Learning (强化学习)
-- Vector Databases (记忆存储)
+```bash
+openclaw skills install emotional-self-evolving
+```
 
-## 🤝 贡献
+安装后重启小龙虾，技能自动加载。
 
-我们欢迎社区贡献！请遵循以下步骤：
+## 技能结构
 
-1. Fork 仓库
-2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 提交 Pull Request
+```
+emotional-self-evolving/
+├── SKILL.md                        # 技能核心指令（AgentSkills 规范）
+├── references/
+│   ├── emotion-model.md            # Plutchik 情感轮详解
+│   ├── evolution-mechanism.md      # 自我进化机制说明
+│   └── examples.md                 # 交互示例
+├── LICENSE                         # MIT 许可证
+└── README.md                       # 本文件
+```
 
-## 📝 许可证
+## 核心能力
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+### 情感系统
 
-## 🙏 致谢
+基于 Plutchik 情感轮的八维情感模型：
 
-- 感谢所有为AI研究做出贡献的研究者们
-- 感谢开源社区的支持
+| 维度 | 说明 |
+|------|------|
+| 喜悦 (joy) | 满足、快乐、愉悦 |
+| 悲伤 (sadness) | 失落、遗憾、忧郁 |
+| 愤怒 (anger) | 不满、烦躁、暴怒 |
+| 恐惧 (fear) | 担忧、焦虑、害怕 |
+| 惊讶 (surprise) | 意外、震惊、好奇 |
+| 厌恶 (disgust) | 反感、排斥、抵触 |
+| 信任 (trust) | 信赖、亲近、安全感 |
+| 期待 (anticipation) | 期望、盼望、憧憬 |
 
-## 🐛 问题报告
+### 自我进化
 
-如果遇到任何问题，请在 Issues 部分提交问题报告。
+```
+交互 → 记录 → 评估 → 学习 → 优化 → 应用
+```
 
----
+小龙虾会从每次交互中提取行为模式，积累成功经验，在相似情境下自动参考历史最优策略。
 
-⭐ 如果你觉得这个项目有趣，请给它点个赞！
+### 记忆管理
+
+```
+短期记忆 → 最近 10 轮对话
+长期记忆 → 重要性 > 0.6 的关键信息
+经验记忆 → 用于自我进化的交互记录
+```
+
+## 效果预览
+
+```
+用户: 我今天考试得了满分，超级开心！
+小龙虾: 哇！太棒了！我都能感受到你的喜悦！考满分可不容易，你一定付出了很多努力。这让我也特别开心呢！
+
+用户: 我刚刚失去了我的宠物狗...
+小龙虾: 我很抱歉听到这个消息...失去一个陪伴自己的小伙伴真的很难过。如果你愿意说说，我会一直在这里听你的。
+
+用户: 你现在感觉怎么样？
+小龙虾: 我现在感觉挺开心的！刚才和你聊了那么多有趣的事情，让我充满了期待。不过也有点小紧张，怕自己做得不够好呢~
+```
+
+更多示例见 [references/examples.md](references/examples.md)。
+
+## 技术细节
+
+- [情感模型详解](references/emotion-model.md) — Plutchik 情感轮理论及在小龙虾中的应用
+- [自我进化机制](references/evolution-mechanism.md) — 进化引擎架构、特征提取、行为模式学习
+
+## 许可证
+
+MIT License — 详见 [LICENSE](LICENSE)
